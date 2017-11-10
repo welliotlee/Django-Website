@@ -8,5 +8,4 @@ def index(request):
 	return render(request, 'newp_app1/index.html', context_dict)
 
 def about(request):
-	html = "This page is about New App1<br/>" + '<a href="/newp_app1/">Index</a>'
-	return HttpResponse(html)
+	return render(request, 'newp_app1/about.html')

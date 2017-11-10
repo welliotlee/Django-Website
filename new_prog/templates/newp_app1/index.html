@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-
-{% load staticfiles %} <!-- New line -->
-
 <html>
-
     <head>
-        <title>Pepe</title>
+        <title>Rango</title>
     </head>
 
     <body>
-        <h1>Pepe says...</h1>
-        Hello I am The Pepe<br />
-        <a href="/newp_app1/about/">About</a><br />
-        <img src="{% static "images/pepe.jpg" %}" alt="Picture of Pepe" /> <!-- New line -->
-    </body>
+        <h1>Rango says..hello world!</h1>
 
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="/newp_app1/category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no categories present.</strong>
+       {% endif %}
+
+    </body>
 </html>

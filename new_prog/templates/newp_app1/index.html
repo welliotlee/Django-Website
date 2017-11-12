@@ -6,7 +6,10 @@
 
     <body>
         <h1>Rango says..hello world!</h1>
-
+        <br/>
+        <a href="/newp_app1/add_category/">Add a New Category</a><br />
+        <br/>
+        Top 5 Categories:
         {% if categories %}
             <ul>
                 {% for category in categories %}
@@ -14,9 +17,19 @@
                 <li><a href="/newp_app1/category/{{ category.slug }}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
-       {% else %}
+        {% else %}
             <strong>There are no categories present.</strong>
-       {% endif %}
-
+        {% endif %}
+        <br/>
+        Additionally here are the top 5 most viewed pages:
+        {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href={{page.url}}>{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong> There are not enough pages to populate this.</strong>
+        {% endif %}
     </body>
 </html>

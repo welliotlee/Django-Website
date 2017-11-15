@@ -1,5 +1,6 @@
 from django.contrib import admin
 from newp_app1.models import Category, Page
+from newp_app1.models import UserProfile
 
 # Register your models here.
 
@@ -11,3 +12,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Page, PageAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(UserProfile,)

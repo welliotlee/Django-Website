@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-{% block title %}List of Guides{% endblock %}
+{% block title %}Rate Guides{% endblock %}
 
 {% block body_block %}
 
@@ -10,7 +10,7 @@
 
      <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">List of the Current Guides</h1>
+          <h1 class="display-3">Rate the Current Guides</h1>
           </div>
       </div>
     <div class="panel panel-primary">
@@ -18,16 +18,15 @@
             <h3 class="panel-title">Guides:</h3>
     </div>
      {% if guide_list %}
-            <ul>
-          {% for guide in guide_list %}
-            <div class="list-group col-md-2">
-                <div class="row justify-content-md-center">
-                <li><a href="{% url 'homepage' %}">{{ guide.name }} by {{ guide.author }}</a></li>
+        {% for guide in guide_list %}
+        <div class="list-group col-md-2">
+            <div class="row justify-content-md-center">
+                <li><font color="green">+{{ guide.upvotes }}</font> / <font color="red">-{{ guide.downvotes }}</font> <a href="{% url 'homepage' %}">{{ guide.name }}</a></li>
                 </div>
 
             </div>
                 {% endfor %}
-            </ul>
+
             {% else %}
                 <strong>There are no current guides</strong>
                 {% endif %}

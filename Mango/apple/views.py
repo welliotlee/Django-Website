@@ -34,3 +34,9 @@ def list_guides(request):
 	guide_list = Guide_Model.objects.order_by('views')[:]
 	context_dict = {'guide_list' : guide_list, }
 	return render(request, 'apple/list_guides.html', context_dict)
+
+def rate_guides(request):
+	context_dict = {}
+	guide_list = Guide_Model.objects.order_by('views')[:]
+	context_dict = {'guide_list' : guide_list, }
+	return render(request, 'apple/rate_guides.html', context_dict)

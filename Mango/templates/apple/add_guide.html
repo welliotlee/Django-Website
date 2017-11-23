@@ -1,0 +1,38 @@
+{% extends 'apple/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Add a new guide{% endblock %}
+{% block body_block %}
+ <main role="main">
+
+     <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Add a Guide</h1>
+          </div>
+      </div>
+
+        <form id="GuideForm" method="post" action="/apple/add_guide/">
+        <div class="fluid-container">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+            <div class="row">
+                {{ field.errors }}
+                    <div class="col-md-4 col-md-offset-5">
+                {{ field.help_text }}
+                    </div>
+                     <br>
+                    <div class="col-md-4 col-md-offset-5">
+                {{ field }}
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    <input type="submit" name="submit" value="Submit Guide" />
+</form>
+</main>
+{% endblock %}

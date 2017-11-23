@@ -1,6 +1,41 @@
 {% extends 'apple/base.html' %}
 
-{% block title %} Welcome to the Homepage for Apple {% endblock %}
+{% block title %}Mango Homepage{% endblock %}
 {% block body_block %}
-    <h1>You have reached the homepage, enjoy your stay</h1>
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Welcome!</h1>
+          <p>You've landed at the main hub of my webpage.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button"> Find out more my page &raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Check out a guide</h2>
+            <p>Find out guides for anything you're interested in.</p>
+            <p><a class="btn btn-secondary" href="{% url 'list_guides' %}" role="button">List Guides &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Add a guide</h2>
+            <p>Contribute to the community by adding hero guides.</p>
+            <p><a class="btn btn-secondary" href="{% url 'add_guide' %}" role="button">Contribute &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Rate a guide</h2>
+            <p>Rate the most effective guides you find personally helpful</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Rate &raquo;</a></p>
+          </div>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
 {% endblock %}

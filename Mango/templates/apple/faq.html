@@ -1,0 +1,62 @@
+{% extends 'apple/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Frequently Asked Questions{% endblock %}
+
+{% block body_block %}
+ <main role="main">
+
+     <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Frequently Asked Questions</h1>
+          </div>
+      </div>
+
+<div id="accordion" role="tablist" aria-multiselectable="true" class="container-fluid">
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Placeholder Question #1
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="card-block">
+        Some Text
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Placeholder Question #2
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="card-block">
+           Some Text
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingThree">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Placeholder Question #3
+        </a>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="card-block">
+            Some Text
+      </div>
+    </div>
+  </div>
+</div>
+ </main>
+{% endblock %}

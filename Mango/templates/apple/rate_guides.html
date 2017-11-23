@@ -18,18 +18,17 @@
             <h3 class="panel-title">Guides:</h3>
     </div>
      {% if guide_list %}
+        <br>
         {% for guide in guide_list %}
         <div class="list-group col-md-2">
-            <div class="row justify-content-md-center">
-                <li><font color="green">+{{ guide.upvotes }}</font> / <font color="red">-{{ guide.downvotes }}</font> <a href="{% url 'homepage' %}">{{ guide.name }}</a></li>
-                </div>
-
-            </div>
-                {% endfor %}
-
-            {% else %}
-                <strong>There are no current guides</strong>
-                {% endif %}
+        <div class="row justify-content-flex-initial">
+        <li><font color="green">+ {{ guide.upvotes }}</font> / <font color="red">- {{ guide.downvotes }}</font> <a href="{% url 'homepage' %}">{{ guide.name }}</a></li>
+        </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <strong>There are no current guides</strong>
+        {% endif %}
     </div>
 
  </main>

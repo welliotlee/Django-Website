@@ -12,6 +12,15 @@ def faq(request):
 	context_dict = {}
 	return render(request, 'apple/faq.html', context_dict)
 
+def guide(request, guide_name_slug):
+	context_dict = {}
+	try:
+		guide = Guide_Model.objects.get(slug=guide_name_slug)
+		context_dict['guide'] = guide
+	except Guide.DoesNotExist:
+		pass
+	return render(request, 'apple/guide.html', context_dict)
+
 def add_guide(request):
 
 	if request.method == 'POST':

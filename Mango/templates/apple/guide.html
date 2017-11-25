@@ -1,0 +1,46 @@
+{% extends 'apple/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ guide.name }}{% endblock %}
+
+{% block body_block %}
+
+<main role="main">
+    {% if guide %}
+     <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">{{ guide.name }}</h1>
+            <p>authored by {{ guide.author }}</p>
+          </div>
+      </div>
+    <div align="center">
+    <div class="panel panel-primary">
+  <div class="panel-heading">
+            <h2 class="panel-title">Ratings: <font color="green">+{{ guide.upvotes }}</font> : <font color="red">-{{ guide.downvotes }}</font></h2>
+        <h2>Views: {{ guide.views }}</h2>
+    </div>
+        <div>
+            <h4>Description:</h4>
+            <h1>{{ guide.desc }}</h1>
+                </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <p><a class="btn btn-secondary" href="{% url 'add_guide' %}" role="button">Like it &raquo;</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><a class="btn btn-secondary" href="{% url 'rate_guides' %}" role="button">Hate it &raquo;</a></p>
+          </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    {% else %}
+    <div class="jumbotron">
+        <div class="container">
+          <h3 class="display-3">{{ guide.name }} doesn't exist!</h3>
+          </div>
+      </div>
+    {% endif %}
+ </main>
+{% endblock %}

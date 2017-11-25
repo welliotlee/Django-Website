@@ -22,7 +22,7 @@
           {% for guide in guide_list %}
             <div class="list-group col-md-2">
                 <div class="row justify-content-flex-initial">
-                <li><a href="{% url 'homepage' %}">{{ guide.name }} by {{ guide.author }}</a></li>
+                <li><a href="/apple/guide/{{ guide.slug }}">{{ guide.name }} by {{ guide.author }}</a></li>
                 </div>
 
             </div>

@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import RegexValidator
 from django.template.defaultfilters import slugify
+
+alphanumeric = RegexValidator(r'^[0-9a-zA-Z ]*$', 'Only alphanumeric characters are allowed.\n')
 
 # Create your models here.
 class Guide_Model(models.Model):
-	name = models.CharField(max_length=256, unique=True)
+	name = models.CharField(max_length=256, unique=True, validators=[alphanumeric])
 	author = models.CharField(max_length=128)
 	#date_added = models.DateField(auto_now_add=True)
 	views = models.IntegerField(default=0)

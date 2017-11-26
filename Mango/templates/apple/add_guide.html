@@ -21,13 +21,14 @@
 
             {% for field in form.visible_fields %}
             <div class="row">
-                {{ field.errors }}
-                    <div class="col-md-4 col-md-offset-5">
+                    <div class="col-md-4">
                 {{ field.help_text }}
                     </div>
-                     <br>
-                    <div class="col-md-4 col-md-offset-5">
+                    <div class="col-md-4">
                 {{ field }}
+                    </div>
+                    <div class="col-md-4">
+                {{ field.errors }}
                     </div>
             </div>
             {% endfor %}

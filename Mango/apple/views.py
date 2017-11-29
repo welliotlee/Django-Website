@@ -17,7 +17,7 @@ def guide(request, guide_name_slug):
 	try:
 		guide = Guide_Model.objects.get(slug=guide_name_slug)
 		context_dict['guide'] = guide
-	except Guide.DoesNotExist:
+	except Guide_Model.DoesNotExist:
 		pass
 	return render(request, 'apple/guide.html', context_dict)
 

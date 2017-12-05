@@ -1,0 +1,11 @@
+{% if guide_list %}
+    <ul class="nav nav-sidebar">
+    {% for g in guide_list %}
+        <li><a href="{% url 'guide' g.slug %}">{{ g.name }}</a></li>
+    {% endfor %}
+
+{% else %}
+    <li><strong>There are no guides.</strong></li>
+
+    </ul>
+{% endif %}

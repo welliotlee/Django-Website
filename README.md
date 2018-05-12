@@ -18,6 +18,10 @@ Django utilizes the sqlite database that comes built in with the django package 
 
 ![Guide](https://i.imgur.com/MWGYtD6.png)
 
+## List of Guides
+
+![List](https://i.imgur.com/XoxIIN3.jpg)
+
 # Author
 
 William Lee
